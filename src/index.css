@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply antialiased text-[#E9E9E9] bg-black font-montserrat;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  background: linear-gradient(180deg, #000000 0%, #101F28 50%, #1D324B 100%);
+  min-height: 100vh;
+}
+
+@layer base {
+  p {
+    @apply font-light;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply backdrop-blur-md bg-[#0D1D2D]/30 border border-[#4b9402]/10;
+  }
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(150, 194, 26, 0.2);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(150, 194, 26, 0.3);
+}
