@@ -5,6 +5,7 @@ export const typeText = async (text: string, callback: (text: string) => void) =
   for (const word of words) {
     currentText += word + ' ';
     callback(currentText);
-    await new Promise(resolve => setTimeout(resolve, 30)); // Adjust speed as needed
+    // Increased the delay to make the typing effect more visible
+    await new Promise(resolve => setTimeout(resolve, 50));
   }
 };

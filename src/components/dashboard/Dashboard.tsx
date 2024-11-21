@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { generateUMReview } from '@/lib/api/openRouter';
 import { SettingsPanel } from '../settings/SettingsPanel';
 import { ProfilePanel } from '../profile/ProfilePanel';
-import { typeText } from '@/lib/utils/typewriter';
 
 export default function Dashboard() {
   const { state: { user } } = useAuth();
@@ -32,10 +31,7 @@ export default function Dashboard() {
         
         const generatedReview = await generateUMReview(message);
         if (generatedReview) {
-          setTranscript('');
-          await typeText(generatedReview, (text) => {
-            setTranscript(text);
-          });
+          setTranscript(generatedReview);
           setEditableTranscript(generatedReview);
         }
         setMessage('');
